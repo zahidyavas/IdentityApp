@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\zahid\\Desktop\\IdentityApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CCC929-534F-9EB9-4990-BE99BCBFDE6B}|IdentityApp.csproj|c:\\users\\zahid\\desktop\\identityapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5CCC929-534F-9EB9-4990-BE99BCBFDE6B}|IdentityApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CCC929-534F-9EB9-4990-BE99BCBFDE6B}|IdentityApp.csproj|c:\\users\\zahid\\desktop\\identityapp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5CCC929-534F-9EB9-4990-BE99BCBFDE6B}|IdentityApp.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CCC929-534F-9EB9-4990-BE99BCBFDE6B}|IdentityApp.csproj|c:\\users\\zahid\\desktop\\identityapp\\models\\identitycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5CCC929-534F-9EB9-4990-BE99BCBFDE6B}|IdentityApp.csproj|solutionrelative:models\\identitycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5CCC929-534F-9EB9-4990-BE99BCBFDE6B}|IdentityApp.csproj|c:\\users\\zahid\\desktop\\identityapp\\identityapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A5CCC929-534F-9EB9-4990-BE99BCBFDE6B}|IdentityApp.csproj|solutionrelative:identityapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\zahid\\Desktop\\IdentityApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\zahid\\Desktop\\IdentityApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T20:54:42.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\zahid\\Desktop\\IdentityApp\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\zahid\\Desktop\\IdentityApp\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-02T20:52:59.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IdentityContext.cs",
+              "DocumentMoniker": "C:\\Users\\zahid\\Desktop\\IdentityApp\\Models\\IdentityContext.cs",
+              "RelativeDocumentMoniker": "Models\\IdentityContext.cs",
+              "ToolTip": "C:\\Users\\zahid\\Desktop\\IdentityApp\\Models\\IdentityContext.cs",
+              "RelativeToolTip": "Models\\IdentityContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T20:47:02.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IdentityApp",
+              "DocumentMoniker": "C:\\Users\\zahid\\Desktop\\IdentityApp\\IdentityApp.csproj",
+              "RelativeDocumentMoniker": "IdentityApp.csproj",
+              "ToolTip": "C:\\Users\\zahid\\Desktop\\IdentityApp\\IdentityApp.csproj",
+              "RelativeToolTip": "IdentityApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-02T20:44:45.504Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
