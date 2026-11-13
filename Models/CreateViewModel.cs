@@ -5,7 +5,7 @@ namespace IdentityApp.Models
     public class CreateViewModel
     {
         [Required]
-        public string? UserName { get; set; }
+        public string? FullName { get; set; }
 
         [Required]
         [EmailAddress]

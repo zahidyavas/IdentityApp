@@ -6,8 +6,8 @@ namespace IdentityApp.Controllers
 {
     public class UsersController : Controller
     {
-        private UserManager<IdentityUser> _userManager;
-        public UsersController(UserManager<IdentityUser> userManager)
+        private UserManager<AppUser> _userManager;
+        public UsersController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
         }
@@ -28,13 +28,14 @@ namespace IdentityApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser
+                var user = new AppUser
                 {
-                    UserName = model.UserName,
-                    Email = model.Email
+                    UserName = model.FullName,
+                    Email = model.Email,
+                    FullName = model.FullName,
                 };
 
-                var result = await _userManager.CreateAsync(user, model.Password);
+                var result = await _userManager.CreateAsync(user, model.Password ?? string.Empty);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index");

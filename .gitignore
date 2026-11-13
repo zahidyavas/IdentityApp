@@ -483,3 +483,5 @@ $RECYCLE.BIN/
 
 # Local database
 auth.db
+auth.db-shm
+auth.db-wal
