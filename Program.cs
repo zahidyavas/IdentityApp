@@ -4,7 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i => 
+    new SmtpEmailSender(
+        builder.Configuration["EmailSender:Host"],
+        builder.Configuration.GetValue<int>("EmailSender:Port"),
+        builder.Configuration.GetValue<bool>("EmailSender:EnableSSL"),
+        builder.Configuration["EmailSender:Username"],
+        builder.Configuration["EmailSender:Password"]
+    )
+);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<IdentityContext>(options =>
@@ -31,7 +39,19 @@ builder.Services.Configure<IdentityOptions>(options => { // Oturum açma ayarlar
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Hesap kilitlenme süresi 5 dakika olarak ayarlanır.
     options.Lockout.MaxFailedAccessAttempts = 5; // Maksimum başarısız giriş denemesi sayısı 5 olarak ayarlanır.
     options.Lockout.AllowedForNewUsers = true; // Yeni kullanıcılar için kilitleme özelliği etkinleştirilir.
-    
+
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+
+    options.SignIn.RequireConfirmedPhoneNumber = true;
+});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.SlidingExpiration = true;
+    options.ExpireTimeSpan = TimeSpan.FromDays(3);
 });
 
 var app = builder.Build();
@@ -46,7 +66,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
+app.UseAuthentication();    
 app.UseAuthorization();
 
 app.MapStaticAssets();
