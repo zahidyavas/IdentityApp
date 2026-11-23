@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace IdentityApp.Controllers
 {
@@ -76,13 +77,13 @@ namespace IdentityApp.Controllers
             return View();
         }
 
-        public IActionResult Create()
+        public IActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateViewModel model)
+        public async Task<IActionResult> Register(CreateViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -138,6 +139,76 @@ namespace IdentityApp.Controllers
             
             TempData["message"] = "User not found.";
             return View();
+        }
+    
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login");
+        }
+    
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ForgotPassword(string Email)
+        {
+            if(string.IsNullOrEmpty(Email))
+            {
+                return View();
+            }
+
+            var user = await _userManager.FindByEmailAsync(Email);
+            
+            if(user == null)
+            {
+                return View();
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            var url = Url.Action("ResetPassword", "Account", new {user.Id, token});
+
+            await _emailSender.SendEmailAsync(Email, "Reset Password", $"<a href='http://localhost:5250{url}'>Click</a> the link to reset your password.");
+
+            TempData["message"] = "You can reset your password using the link sent to your email address";
+
+            return View();
+            
+        }
+    
+        public IActionResult ResetPassword(string Id, string token)
+        {
+            if(Id == null || token == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            var model = new ResetPasswordModel
+            {
+              Token = token  
+            };
+            return View(model);
+        }
+    
+        public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if(user == null)
+                {
+                    return RedirectToAction("Login");
+                }
+                var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+
+                if(result.Succeeded)
+                {
+                    return RedirectToAction("Login");
+                }
+            }
+            return View(model);
         }
     }
 }
